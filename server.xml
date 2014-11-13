@@ -1,0 +1,22 @@
+<server description="CICS TG Liberty sample">
+
+   <!-- Enable features -->
+   <featureManager>
+      <feature>servlet-3.0</feature>
+      <feature>jca-1.6</feature>
+   </featureManager>
+
+   <httpEndpoint httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint"/>
+
+   <!--The location of the cicseci.rar needs to be updated to the full path-->
+   <resourceAdapter autoStart="true" id="eciResourceAdapter" location="cicseci.rar"/>
+
+   <connectionFactory id="eciTest" jndiName="eis/ECI">
+      <!--The properties need to be updated to the location of the CICS Transaction Gateway-->
+      <properties.eciResourceAdapter connectionUrl="tcp://localhost" portNumber="2006"/>
+   </connectionFactory>
+
+   <webApplication id="libertyJCA" location="libertyJCA.war" name="libertyJCA">
+      <classloader classProviderRef="eciResourceAdapter" />
+   </webApplication>
+</server>
