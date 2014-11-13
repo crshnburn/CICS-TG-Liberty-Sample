@@ -1,3 +1,19 @@
+/*
+ Copyright IBM Corporation 2014
+
+ LICENSE: Apache License
+          Version 2.0, January 2004
+          http://www.apache.org/licenses/
+
+ The following code is sample code created by IBM Corporation.
+ This sample code is not part of any standard IBM product and
+ is provided to you solely for the purpose of assisting you in
+ the development of your applications.  The code is provided
+ 'as is', without warranty or condition of any kind.  IBM shall
+ not be liable for any damages arising out of your use of the
+ sample code, even if IBM has been advised of the possibility
+ of such damages.
+*/
 package com.ibm.ctg.samples.liberty;
 
 import java.io.IOException;
@@ -19,10 +35,10 @@ import com.ibm.connector2.cics.ECIInteractionSpec;
  */
 @WebServlet("/JCAServlet")
 public class JCAServlet extends HttpServlet {
-   
+
    @Resource(lookup="eis/ECI")
    private ConnectionFactory cf = null;
-    
+
    private static final long serialVersionUID = 1L;
 
    /**
@@ -49,7 +65,7 @@ public class JCAServlet extends HttpServlet {
          eSpec.setReplyLength(20);
          eSpec.setFunctionName("EC01");
          eSpec.setInteractionVerb(ECIInteractionSpec.SYNC_SEND_RECEIVE);
-      
+
          eciInt.execute(eSpec, jsr, jsr);
          response.getWriter().println(jsr.getText().trim());
       } catch (Exception e){
@@ -88,7 +104,7 @@ public class JCAServlet extends HttpServlet {
 
       /**
        * get the name of the Record
-       * 
+       *
        * @return a String representing the Record Name
        */
       public java.lang.String getRecordName() {
@@ -97,7 +113,7 @@ public class JCAServlet extends HttpServlet {
 
       /**
        * set the name of the Record
-       * 
+       *
        * @param newName
        *            The Name of the Record
        */
@@ -107,7 +123,7 @@ public class JCAServlet extends HttpServlet {
 
       /**
        * set the record short description
-       * 
+       *
        * @param newDesc
        *            The Description for this record
        */
@@ -117,7 +133,7 @@ public class JCAServlet extends HttpServlet {
 
       /**
        * get the short description for this Record
-       * 
+       *
        * @return a String representing the Description
        */
       public java.lang.String getRecordShortDescription() {
@@ -126,7 +142,7 @@ public class JCAServlet extends HttpServlet {
 
       /**
        * return a hashcode for this object
-       * 
+       *
        * @return hashcode
        */
       public int hashCode() {
@@ -140,7 +156,7 @@ public class JCAServlet extends HttpServlet {
       /**
        * The following determines if objects are equal. Objects are equal if
        * they have the same reference or the text contained is identical.
-       * 
+       *
        * @return flag indicating true or false
        */
       public boolean equals(java.lang.Object comp) {
@@ -169,7 +185,7 @@ public class JCAServlet extends HttpServlet {
        * transmitting data to the Record. A commarea has been received from
        * the ECI Resource Adapter and must have been passed as an output
        * record.
-       * 
+       *
        * @param is
        *            The inputStream containing the information.
        * @exception IOException
@@ -195,7 +211,7 @@ public class JCAServlet extends HttpServlet {
       /**
        * This method is invoked by the ECI Resource Adapter when it wants to
        * read the record. An input record must have been passed in.
-       * 
+       *
        * @param os
        *            The output stream to write the information to
        * @exception IOException
@@ -213,7 +229,7 @@ public class JCAServlet extends HttpServlet {
 
       /**
        * Return the text of this Java record.
-       * 
+       *
        * @return The text
        */
       public String getText() {
@@ -222,7 +238,7 @@ public class JCAServlet extends HttpServlet {
 
       /**
        * Set the text for this Java record.
-       * 
+       *
        * @param newStr
        *            The new text
        */
@@ -232,7 +248,7 @@ public class JCAServlet extends HttpServlet {
 
       /**
        * Return the current Java encoding used for this record.
-       * 
+       *
        * @return the Java encoding
        */
       public String getEncoding() {
@@ -241,11 +257,11 @@ public class JCAServlet extends HttpServlet {
 
       /**
        * Set the Java encoding to be used for this record.
-       * 
+       *
        * Note: no checks are made at this time to see if the encoding is a
        * valid Java encoding. If you wish you can modify the code to include
        * this.
-       * 
+       *
        * @param newEnc
        *            the new Java encoding
        */
