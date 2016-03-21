@@ -12,7 +12,7 @@ The supplied `server.xml` file shows the required configuration paramters for ad
 The sample servlet code can be added to a Web Project. To correct any compilation errors the cicsjee.jar should be added to the build path.
 
 ### Reference
-More information about working with CICS TG resource adapters in WebSphere Liberty Profile can be found in this [blog post](https://www.ibm.com/developerworks/community/blogs/cicsdev/entry/connecting_to_cics_tg_from_websphere_liberty_profile?lang=en).
+More information about working with CICS TG resource adapters in WebSphere Liberty Profile can be found in this [blog post](https://developer.ibm.com/cics/2014/05/06/using-jca-with-the-cics-tg-in-websphere-liberty-profile/).
 
 ### Notice
 &copy; Copyright IBM Corporation 2014
